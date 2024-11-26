@@ -1,14 +1,19 @@
 import Link from "next/link";
 import { useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
+import { IoCloseOutline } from "react-icons/io5";
 
 const NavbarT = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = ["Breakfast", "Lunch", "Dinner"];
 
-  const handleMenu = () => {
+  const openMenu = () => {
     setIsMenuOpen(true);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -18,7 +23,7 @@ const NavbarT = () => {
           <img src="logo.png" alt="logo" />
         </div>
 
-        <div className="hidden sm:flex text-darkGray gap-20">
+        <div className="hidden sm:flex items-center text-darkGray gap-20">
           <div>
             <Link color="foreground" href="#">
               Breakfast
@@ -42,19 +47,27 @@ const NavbarT = () => {
             <img src="cart.png" alt="cart" />
           </div>
         </div>
-        <div className="flex items-center md:hidden" onClick={handleMenu}>
-          <CiMenuFries className="text-darkBlack2 text-xl cursor-pointer" />
+        <div className="flex items-center md:hidden">
+          {isMenuOpen ? (
+            <IoCloseOutline
+              onClick={closeMenu}
+              className="text-darkBlack2 text-2xl cursor-pointer"
+            />
+          ) : (
+            <CiMenuFries
+              onClick={openMenu}
+              className="text-darkBlack2 text-xl cursor-pointer"
+            />
+          )}
         </div>
       </div>
 
       {isMenuOpen && (
-        <div className="grid grid-cols-1 gap-4 my-4">
+        <div className="grid grid-cols-1 gap-4 my-6 p-4 rounded-md shadow-xl bg-opacity-65 backdrop-blur-md bg-darkBlack2">
           {menuItems.map((item, index) => (
             <div key={`${item}-${index}`}>
               <Link className="w-full" href="#">
-                <span className=" hover:opacity-60 hover:scale-150">
-                  {item}
-                </span>
+                <span className="text-white hover:opacity-60">{item}</span>
               </Link>
             </div>
           ))}

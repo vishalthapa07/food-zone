@@ -20,8 +20,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main className="bg-white2 h-[100vh]">
-          <div className="max-w-[1920px] mx-auto ml-4 md:ml-16 lg:ml-28">
-            {children}
+          <div className="relative z-50 max-w-[1920px] mx-auto">
+            <section className="ml-4 md:ml-16 lg:ml-28">{children}</section>
           </div>
         </main>
       </body>
