@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="bg-white2 h-[100vh]">
+        <main className="bg-white2 h-screen overflow-auto lg:overflow-hidden">
           <div className="relative z-50 max-w-[1920px] mx-auto">
             <section className="ml-4 md:ml-16 lg:ml-28">{children}</section>
           </div>
