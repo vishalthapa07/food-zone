@@ -44,6 +44,13 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <div className="flex 2xl:hidden h-[60px] md:h-[80px] w-[258px] md:w-[358px] z-10 mt-2 rounded-full uppercase items-center justify-center bg-orange1 text-white1 font-bold text-base md:text-xl">
+            $20{" "}
+            <span className="px-2">
+              <sup>___________</sup>
+            </span>
+            order now
+          </div>
         </div>
 
         <div>
@@ -56,7 +63,7 @@ export default function Home() {
                 : "transform scale-100 rotate-0 opacity-100"
             }`}
           />
-          <div className="h-[60px] md:h-[80px] w-[250px] md:w-[358px] z-20 rounded-full uppercase flex items-center justify-center absolute m-auto mb-4 bottom-96 md:bottom-36 lg:bottom-0 ml-20 md:ml-44  bg-orange1 text-white1 font-bold text-base md:text-xl">
+          <div className="hidden 2xl:flex h-[80px] w-[358px] z-20 rounded-full uppercase items-center justify-center absolute m-auto mb-4 bottom-96 md:bottom-36 lg:bottom-0 ml-20 md:ml-44 bg-orange1 text-white1 font-bold text-base md:text-xl">
             $20{" "}
             <span className="px-2">
               <sup>___________</sup>
