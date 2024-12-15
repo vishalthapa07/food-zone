@@ -12,15 +12,14 @@ export default function Home() {
   const [isAnimating, setIsAnimating] = useState(false);
 
   const handleMouseEnter = (image: string) => {
-    setIsAnimating(true);
-    setTimeout(() => {
-      setMainImage(image);
-      setIsAnimating(false);
-    }, 300);
+    setIsAnimating(true); // Start animation
+    setMainImage(image); // Immediately update the image
+    setTimeout(() => setIsAnimating(false), 300); // End animation after the transition
   };
 
   const handleMouseLeave = () => {
     setMainImage("lg-1.png"); // Default image
+    setIsAnimating(false);
   };
   return (
     <section>
